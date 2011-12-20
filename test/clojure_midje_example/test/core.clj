@@ -14,3 +14,6 @@
         (tails [1 2 3]) => [ [2 3] [3] [] ]))
 (fact "headed-pairs combines an element with each element of a sequence"
     (headed-pairs 1 [2 3]) => [ [1 2] [1 3]])
+(fact "tails generates all the tails of a sequence"
+    (tails [1 2 3]) => [ [2 3] [3] []])
+
