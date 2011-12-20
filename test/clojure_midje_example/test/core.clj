@@ -2,5 +2,5 @@
   (:use [clojure-midje-example.core])
   (:use [clojure.test]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest the-simplest-test-you-can-write
+  (is 3 (+ 1 2)))
