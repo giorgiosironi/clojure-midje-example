@@ -3,6 +3,8 @@
 
 (defn -main [] (println "Hello World!"))
 
-(unfinished headed-pairs tails)
+(unfinished tails)
+(defn headed-pairs [element sequence]
+    (map #(list element %) sequence))
 (defn downward-pairs [sequence]
     (mapcat headed-pairs sequence (tails sequence)))
