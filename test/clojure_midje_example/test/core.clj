@@ -3,6 +3,13 @@
   (:use [clojure.test])
   (:use [midje.sweet]))
 
-(deftest the-simplest-test-you-can-write
-  (is 3 (+ 1 2)))
-(fact (+ 1 2) => 3)
+(fact "downward-pairs combines each element with all the elements in its tail"
+    (downward-pairs [1 2 3]) => (just [1 2] [1 3] 
+                                            [2 3]
+                                      :in-any-order)
+    (provided
+        (headed-pairs 1 [2 3]) => [ [1 2] [1 3] ]
+        (headed-pairs 2 [3]) => [ [2 3] ]
+        (headed-pairs 3 []) => [ ]
+        (tails [1 2 3]) => [ [2 3] [3] [] ]))
+
