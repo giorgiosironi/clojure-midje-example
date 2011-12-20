@@ -6,8 +6,8 @@
 (defn headed-pairs [element sequence]
     (map #(list element %) sequence))
 (defn tails [sequence]
-    (if (= sequence [])
-        []
-        (concat (list (rest sequence)) (tails (rest sequence)))))
+    (map drop 
+        (range 1 (count sequence))
+        (repeat sequence)))
 (defn downward-pairs [sequence]
     (mapcat headed-pairs sequence (tails sequence)))
